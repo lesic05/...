@@ -6,7 +6,7 @@
 </script>
 
 {#await promise}
-	<span class="loading loading-spinner loading-lg" />loanding
+	<span class="loading loading-spinner loading-lg" />
 {:then result}
 	{#each result.data as country}
 		<p>{country.name}</p>
