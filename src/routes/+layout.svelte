@@ -1,6 +1,17 @@
 <script>
+	import { onMount } from 'svelte';
+	import { supabase } from '$lib/supabase';
 	import '../app.postcss';
-	import { theme } from '$lib/store';
+	import { session, theme } from '$lib/store';
+	onMount(() => {
+		supabase.auth.getSession().then(({ data }) => {
+			$session = data.session;
+		});
+
+		supabase.auth.onAuthStateChange((_event, _session) => {
+			$session = _session;
+		});
+	});
 </script>
 
 <div data-theme={$theme} class="min-h-screen p-3">
