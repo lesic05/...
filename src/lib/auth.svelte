@@ -25,6 +25,7 @@
 </script>
 
 <Notification message={errorMessage} visible={showError} />
+
 <div class="row flex-center flex">
 	<div class="ml-64 mt-28 card w-1/3 bg-base-50 shadow-xl">
 		<div class="card-body">
